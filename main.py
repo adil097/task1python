@@ -25,4 +25,3 @@ with open("python_job_vacancies.csv", "w") as f:
         job_descriptions=soup2.find('div', class_='g-user-content').text
         company_names=soup2.find('div', class_='vacancy-company-details').text
         f.write(f"{job_titles}, {company_names}, {job_descriptions}\n")
-    
