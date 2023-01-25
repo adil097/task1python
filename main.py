@@ -15,10 +15,9 @@ soup = BeautifulSoup(driver.page_source, 'html.parser')
 i=0
 with open("python_job_vacancies.csv", "w") as f:
     f.write("Job Title, Company Name, Job Description\n")
-    while i < 49:
-        i += 1
-        #print(i)
+    while i < 50:
         url_job=soup.find_all('a', class_='serp-item__title')[i].get('href')
+        i += 1
         response2 = requests.get(url_job, headers={'User-Agent': UserAgent().chrome}, proxies=None)
         soup2 = BeautifulSoup(response2.text, 'html.parser')
         job_titles=soup2.find('h1').text
