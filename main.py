@@ -22,10 +22,6 @@ with open("python_job_vacancies.csv", "w") as f:
         response2 = requests.get(url_job, headers={'User-Agent': UserAgent().chrome}, proxies=None)
         soup2 = BeautifulSoup(response2.text, 'html.parser')
         job_titles=soup2.find('h1').text
-        #experience=soup2.find('div', class_='vacancy-company-details').text
-        #salary1=soup2.find('div', class_='vacancy-company-details').text
-        #salary2=soup2.find('div', class_='vacancy-company-details').text
-        #keyword=soup2.find('div', class_='vacancy-company-details').text
         job_descriptions=soup2.find('div', class_='g-user-content').text
         company_names=soup2.find('div', class_='vacancy-company-details').text
         f.write(f"{job_titles}, {company_names}, {job_descriptions}\n")
