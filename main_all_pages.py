@@ -22,7 +22,6 @@ with open("python_job_vacancies.csv", "w") as f:
             i=0
             while i < 50:
                 url_job=soup.find_all('a', class_='serp-item__title')[i].get('href')
-                print(i)
                 i += 1 
                 response2 = requests.get(url_job, headers={'User-Agent': UserAgent().chrome}, proxies=None)
                 soup2 = BeautifulSoup(response2.text, 'html.parser')
