@@ -14,7 +14,7 @@ soup = BeautifulSoup(driver.page_source, 'html.parser')
 
 i=0
 with open("python_job_vacancies.csv", "w") as f:
-    f.write("Job Title, Company Name, Experience, Salary Low, Salary High, Keywords, Job Description\n")
+    f.write("Job Title, Company Name, Job Description\n")
     while i < 49:
         i += 1
         #print(i)
